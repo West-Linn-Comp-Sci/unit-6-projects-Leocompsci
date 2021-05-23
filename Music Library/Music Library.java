@@ -1,7 +1,7 @@
 public class MusicLibrary
 {
     int totalSongs = 0;
-    double totalPlayTime = 0;
+    double totalTimePlayed = 0;
     Album[] library = new Album[10];
 
     public MusicLibrary (){
@@ -9,8 +9,8 @@ public class MusicLibrary
     public int totalSongs() {
         return totalSongs;
     }
-    public double totalPlayTime() {
-        return totalPlayTime;
+    public double totalTimePlayed() {
+        return totalTimePlayed;
     }
     public String toString(){
         String result = "";
@@ -20,7 +20,7 @@ public class MusicLibrary
                     "Album " + albumSequence + ": \n" + library[i] + "\n";
         }
         result += "\n" + "Total number of tracks: " + totalSongs + "\n";
-        result += "Total playtime: " + totalPlayTime + "\n";
+        result += "Total time played: " + totalTimePlayed + "\n";
         return result;
     }
     public void doubleCapacity(){
@@ -34,7 +34,7 @@ public class MusicLibrary
         for(int i =0; i < library.length; i++) {
             if(library[i] == null) {
                 totalSongs += album.songs();
-                totalPlayTime = album.playTime();
+                totalTimePlayed = album.TimePlayed();
 
                 library[i] = album;
                 break;
@@ -44,7 +44,7 @@ public class MusicLibrary
     public void remove(Album album, int albumNum) {
         library[albumNum] = null;
         totalSongs -= album.songs();
-        totalPlayTime -= album.playTime();
+        totalTimePlayed -= album.TimePlayed();
     }
     public void sortByNameAlpha() {
         for (int i = 0; i < library.length - 1; i++) {
@@ -65,7 +65,7 @@ public class MusicLibrary
         for (int i = 0; i < library.length - 1; i++) {
             int min = i;
             for (int j = i; j < library.length; j++) {
-                if (library[j] != null && library[j].playTime < library[min].playTime) {
+                if (library[j] != null && library[j].TimePlayed < library[min].TimePlayed) {
                     min = j;
                 }
             }
