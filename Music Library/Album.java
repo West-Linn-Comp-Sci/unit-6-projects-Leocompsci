@@ -1,4 +1,4 @@
-public class MusicLibraryAlbum {
+public class Album {
     public String name;
     public String artist;
     public int songs;
